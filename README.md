@@ -1,3 +1,3 @@
-# GAME2005-F2021-Assignment3-Starter
+# GAME2005-F2021-Labs 6-12
 
-Starter Project for GAME2005 in the Fall2021 Semester for Assignment 3
+Repo for labs 7 - 12 for Game Physics
