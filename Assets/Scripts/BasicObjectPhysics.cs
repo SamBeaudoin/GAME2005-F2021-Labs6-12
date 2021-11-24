@@ -2,28 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicPhysics : MonoBehaviour
+public class BasicObjectPhysics : MonoBehaviour
 {
+
     public float mass = 1.0f;
     public Vector3 velocity = Vector3.zero;
 
     public PhysicsManager physicManager;
     public float gravityScale = 1.0f;
-    public PhysicsShapeBase ShapeBase = null;
+    public PhysiczColliderBase shape = null;
 
-    //public float gravity = -9.81f;
+    // should this object be able to be controlled by collision response physics?
+    public bool lockPosition = false;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        //Debug.Log("Hello World from " + gameObject.name + "!");
+        Debug.Log("Hello World from " + gameObject.name + "!");
         physicManager = FindObjectOfType<PhysicsManager>(); // return the first found component in the scene which has the type
         physicManager.BasicObjectsList.Add(this);
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        transform.position = transform.position + velocity * Time.fixedDeltaTime;
+
     }
 }

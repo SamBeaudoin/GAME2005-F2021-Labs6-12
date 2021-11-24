@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3904244143303740863}
   - component: {fileID: 1203475966935354167}
   - component: {fileID: 4846407828993254108}
-  - component: {fileID: -6503376909537787210}
+  - component: {fileID: -4104575815126700207}
   m_Layer: 0
   m_Name: Red Sphere
   m_TagString: Untagged
@@ -83,7 +83,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-6503376909537787210
+--- !u!114 &-4104575815126700207
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3503744225965021090}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb78b9cf6ad6cc941b6e811603755c01, type: 3}
+  m_Script: {fileID: 11500000, guid: 491ec8c631b12674e9e41902e392e22a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mass: 1

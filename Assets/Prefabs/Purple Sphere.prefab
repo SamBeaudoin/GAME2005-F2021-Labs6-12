@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 173094448537850175}
   - component: {fileID: 2664941458201696183}
   - component: {fileID: 8577592682298523228}
-  - component: {fileID: -4885633258265739877}
+  - component: {fileID: 2821792156222292445}
   m_Layer: 0
   m_Name: Purple Sphere
   m_TagString: Untagged
@@ -83,7 +83,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-4885633258265739877
+--- !u!114 &2821792156222292445
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 348907923235965730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb78b9cf6ad6cc941b6e811603755c01, type: 3}
+  m_Script: {fileID: 11500000, guid: 491ec8c631b12674e9e41902e392e22a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mass: 1
