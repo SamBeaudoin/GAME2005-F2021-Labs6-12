@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-struct CollisionInfo
-{
-    public PhysiczColliderBase colliderA;
-    public PhysiczColliderBase colliderB;
-    public Vector3 collisionNormalAtoB;
-    public Vector3 contactPoint;
-}
+//struct CollisionInfo
+//{
+//    public PhysiczColliderBase colliderA;
+//    public PhysiczColliderBase colliderB;
+//    public Vector3 collisionNormalAtoB;
+//    public Vector3 contactPoint;
+//}
 public class PhysicsManager : MonoBehaviour
 {
 
@@ -29,7 +29,7 @@ public class PhysicsManager : MonoBehaviour
         {
             BasicObjectPhysics obj = BasicObjectsList[i];
 
-            if (!obj.lockPosition)
+            //if (!obj.lockPosition)
             {
                 // Velocity Update
                 obj.velocity += (gravity * obj.gravityScale) * Time.fixedDeltaTime;
@@ -150,8 +150,8 @@ public class PhysicsManager : MonoBehaviour
         //}
 
         Vector3 minimumTranslationVectorAtoB = penitrationDepth * collisionNormalAtoB;
-        Vector3 TranslationVectorA = minimumTranslationVectorAtoB * moveScalarA;
-        Vector3 TranslationVectorB = -minimumTranslationVectorAtoB * moveScalarB;
+        Vector3 TranslationVectorA = -minimumTranslationVectorAtoB * moveScalarA;
+        Vector3 TranslationVectorB = minimumTranslationVectorAtoB * moveScalarB;
 
         //a.transform.position += TranslationVectorA * 1.1f;
         //b.transform.position += TranslationVectorB * 1.1f;
@@ -258,14 +258,14 @@ public class PhysicsManager : MonoBehaviour
         float restitution = (objA.bounciness + objB.bounciness) * 0.5f;
 
         // Determine change in velocity 
-        float deltaV = -(relativeNormalVelocityAB * (1.0f + restitution));
+        float deltaV = (relativeNormalVelocityAB * (1.0f + restitution));
         float impulse;
 
         // respond differently based on locked states
         if (objA.lockPosition && !objB.lockPosition)
         {
             // Only B
-            impulse = deltaV * objB.mass;
+            impulse = -deltaV * objB.mass;
             objB.velocity += normal * (impulse / (objB.mass));
         }
         else if (!objA.lockPosition && objB.lockPosition)
@@ -274,7 +274,7 @@ public class PhysicsManager : MonoBehaviour
             // impulse = Force * time = kg * m/s^2 * s = kg m/s
             // impulse / objA.mass == deltaV
             // Only A change velocity
-            impulse = deltaV * objA.mass; 
+            impulse = -deltaV * objA.mass; 
             objA.velocity -= normal * (impulse / (objA.mass));
         }
         else if (!objA.lockPosition && !objB.lockPosition)
