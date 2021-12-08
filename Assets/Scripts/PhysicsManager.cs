@@ -375,16 +375,22 @@ public class PhysicsManager : MonoBehaviour
             return;
         }
 
+        // Choose a coefficient of friction
         float kFrictionCoefficient = (a.frictioniness + b.frictioniness) * 0.5f;
 
+        // Find Normal
         Vector3 directionToApplyFriction = relativeSurfaceVelocityAtoB / relativeSpeed; // normalizing
 
+        // Find force of gravity
         Vector3 gravity1 = new Vector3(0.0f, -9.81f, 0.0f); // Not Sure Why I can't Access Gravity??________________________________???
 
+        // Calculate Normal Force from gravity
         float gravityAccelerationAlongNormal = Vector3.Dot(gravity1, normalAtoB);    // * by mass to find force
 
         Vector3 frictionAcceleration = directionToApplyFriction * gravityAccelerationAlongNormal * kFrictionCoefficient;
 
+        // Calculate force of friction (Fnormal * coefficientOfFriction)
+        // Apply the force of friction opposite to the relative velocity to create an acceleration
         if (!a.lockPosition)
         {
             a.velocity -= frictionAcceleration * Time.fixedDeltaTime;   // didn't divide by mass, but could have if we multiplied by mas earlier
@@ -393,24 +399,6 @@ public class PhysicsManager : MonoBehaviour
         {
             b.velocity += frictionAcceleration * Time.fixedDeltaTime;
         }
-
-
-        // Find Normal
-        // Find force of gravity
-        // Calculate Normal Force from gravity
-        // Choose a coefficient of friction
-
-
-
-        // Calculate force of friction (Fnormal * coefficientOfFriction)
-        // Apply the force of friction opposite to the relative velocity to create an acceleration
-
-
-
-        // Keep in mind we have a feature for "Locked" objects
-
-
-
     }
 
 }
