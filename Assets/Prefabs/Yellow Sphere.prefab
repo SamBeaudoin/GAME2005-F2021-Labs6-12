@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7352427239641618594}
   - component: {fileID: 3889822157555429705}
   - component: {fileID: -6153376036016130952}
+  - component: {fileID: 3292206568418146949}
   m_Layer: 0
   m_Name: Yellow Sphere
   m_TagString: Untagged
@@ -99,3 +100,21 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   physicManager: {fileID: 0}
   gravityScale: 1
+  bounciness: 0.6
+  frictioniness: 0.5
+  shape: {fileID: 3292206568418146949}
+  lockPosition: 0
+--- !u!114 &3292206568418146949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5054523491087336503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a61b6641286c3428bfeaa5a86f532d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kinematicsObject: {fileID: -6153376036016130952}
+  radius: 0.5

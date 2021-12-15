@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2664941458201696183}
   - component: {fileID: 8577592682298523228}
   - component: {fileID: 2821792156222292445}
+  - component: {fileID: -7175571599662735936}
   m_Layer: 0
   m_Name: Purple Sphere
   m_TagString: Untagged
@@ -99,3 +100,21 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   physicManager: {fileID: 0}
   gravityScale: 1
+  bounciness: 0.6
+  frictioniness: 0.5
+  shape: {fileID: -7175571599662735936}
+  lockPosition: 0
+--- !u!114 &-7175571599662735936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348907923235965730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a61b6641286c3428bfeaa5a86f532d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kinematicsObject: {fileID: 2821792156222292445}
+  radius: 0.5
